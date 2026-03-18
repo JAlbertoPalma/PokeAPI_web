@@ -1,0 +1,87 @@
+{
+  "info": {
+    "name": "PokeDex API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Crear Equipo",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Equipo Kanto\",\n  \"members\": [\"bulbasaur\", \"charmander\", \"squirtle\"]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/teams",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["teams"]
+        }
+      }
+    },
+    {
+      "name": "2. Listar Equipos",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/teams",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["teams"]
+        }
+      }
+    },
+    {
+      "name": "3. Detalle de Equipo (Enriquecido con PokeAPI)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/teams/AQUI_PON_EL_ID",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["teams", "AQUI_PON_EL_ID"]
+        }
+      }
+    },
+    {
+      "name": "4. Actualizar Equipo",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Equipo Modificado\",\n  \"members\": [\"mewtwo\"]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/teams/AQUI_PON_EL_ID",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["teams", "AQUI_PON_EL_ID"]
+        }
+      }
+    },
+    {
+      "name": "5. Borrar Equipo",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:3000/teams/AQUI_PON_EL_ID",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["teams", "AQUI_PON_EL_ID"]
+        }
+      }
+    }
+  ]
+}
